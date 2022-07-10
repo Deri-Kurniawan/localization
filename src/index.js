@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import Translator from './locales/Translator';
+import 'flag-icons/css/flag-icons.min.css';
+
+Translator.init();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

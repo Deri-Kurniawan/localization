@@ -1,26 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import LangChanger from "./components/LangChanger";
 
-function App() {
+export default function App() {
+  const { t } = useTranslation();
+  document.title = t("title");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <LangChanger />
+      <h2>{t('intro', {name: 'Deri Kurniawan', age: new Date().getFullYear()-2001})}</h2>
+      <p>{t('lorem')}</p>
+    </>
   );
 }
-
-export default App;
